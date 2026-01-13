@@ -2,4 +2,3 @@
 for i in range (97,123):
     chr(i)
     print("{}".format(chr(i)), end="")
-    
