@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-def replace_in_list(list, id, element):
-    if id < 0 or id >= len(list):
-        return list
-    list[id] = element
-    return list
+def replace_in_list(my_list, idx, element):
+    if idx < 0 or idx >= len(my_list):
+        return my_list
+    my_list[idx] = element
+    return my_list
