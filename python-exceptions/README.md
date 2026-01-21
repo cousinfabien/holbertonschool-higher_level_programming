@@ -1,0 +1,1 @@
+# Trimestre 2, Semaine 2, Projet 3 : Python - Exceptions
