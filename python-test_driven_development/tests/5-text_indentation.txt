@@ -3,8 +3,11 @@
 # Test normal : texte avec '.', '?', ':'
 >>> text_indentation("Hello. How are you? I am fine: thank you.")
 Hello.
+<BLANKLINE>
 How are you?
+<BLANKLINE>
 I am fine:
+<BLANKLINE>
 thank you.
 
 # Test texte vide
@@ -13,13 +16,17 @@ thank you.
 # Test texte avec plusieurs délimiteurs consécutifs
 >>> text_indentation("Hi! Are you okay?.. Yes: good.")
 Hi!
+<BLANKLINE>
 Are you okay?
+<BLANKLINE>
 Yes:
+<BLANKLINE>
 good.
 
 # Test texte avec espaces en début et fin
 >>> text_indentation("  Hello world.  How are you? ")
 Hello world.
+<BLANKLINE>
 How are you?
 
 # Test avec valeur non string : int
