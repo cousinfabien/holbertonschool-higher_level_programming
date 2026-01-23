@@ -31,4 +31,4 @@ def text_indentation(text):
     # Segment restant après le dernier délimiteur
     remaining = text[start:].strip()
     if remaining:
-        print(remaining, end="")
+        print(remaining)
