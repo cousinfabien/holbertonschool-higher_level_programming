@@ -27,18 +27,27 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    # Vérification que matrix est une liste de listes et que chaque élément est int/float
     if (not isinstance(matrix, list) or
-        not all(isinstance(row, list) for row in matrix) or
-        not all(isinstance(elem, (int, float)) for row in matrix for elem in row)):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            not all(isinstance(row, list) for row in matrix) or
+        not all(
+            isinstance(elem, (int, float))
+            for row in matrix
+            for elem in row)):
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats"
+        )
 
     # Vérification que toutes les lignes ont la même taille
     row_lengths = [len(row) for row in matrix]
     if len(set(row_lengths)) > 1:
-        raise TypeError("Each row of the matrix must have the same size")
+        raise TypeError(
+            "Each row of the matrix must have the same size"
+        )
 
     # Création d’une nouvelle matrice avec division arrondie à 2 décimales
-    new_matrix = [[round(elem / div, 2) for elem in row] for row in matrix]
+    new_matrix = [
+        [round(elem / div, 2) for elem in row]
+        for row in matrix
+    ]
 
     return new_matrix
