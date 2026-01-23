@@ -25,10 +25,10 @@ def text_indentation(text):
         if char in delimiters:
             segment = text[start:i + 1].strip()
             if segment:
-                print(segment)
+                print(segment, end="\n\n")
             start = i + 1
 
     # Segment restant après le dernier délimiteur
     remaining = text[start:].strip()
     if remaining:
-        print(remaining)
+        print(remaining, end="")
