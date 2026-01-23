@@ -3,31 +3,23 @@
 # Test normal : texte avec '.', '?', ':'
 >>> text_indentation("Hello. How are you? I am fine: thank you.")
 Hello.
-
 How are you?
-
 I am fine:
-
 thank you.
 
 # Test texte vide : ne doit rien afficher
 >>> text_indentation("")
-# (aucune sortie)
 
 # Test plusieurs délimiteurs consécutifs
 >>> text_indentation("Hi! Are you okay?.. Yes: good.")
 Hi!
-
 Are you okay?
-
 Yes:
-
 good.
 
 # Test texte avec espaces en début et fin
 >>> text_indentation("  Hello world.  How are you? ")
 Hello world.
-
 How are you?
 
 # Test erreur de type : int
