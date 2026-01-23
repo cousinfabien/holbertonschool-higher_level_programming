@@ -1,4 +1,4 @@
->>> from add_integer import add_integer
+>>> from 0-add_integer import add_integer
 >>> add_integer(2, 3)
 5
 >>> add_integer(2.7, 3.2)
