@@ -24,7 +24,8 @@ def text_indentation(text):
     for i, char in enumerate(text):
         if char in delimiters:
             segment = text[start:i + 1].strip()
-            if segment:print(segment, end="\n\n")
+            if segment:
+                print(segment, end="\n\n")
             start = i + 1
 
     # Segment restant après le dernier délimiteur
