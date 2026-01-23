@@ -1,0 +1,49 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Test normal : texte avec '.', '?', ':'
+>>> text_indentation("Hello. How are you? I am fine: thank you.")
+Hello.
+
+How are you?
+
+I am fine:
+
+thank you.
+
+# Test texte vide : ne doit rien afficher
+>>> text_indentation("")
+# (aucune sortie)
+
+# Test plusieurs délimiteurs consécutifs
+>>> text_indentation("Hi! Are you okay?.. Yes: good.")
+Hi!
+
+Are you okay?
+
+Yes:
+
+good.
+
+# Test texte avec espaces en début et fin
+>>> text_indentation("  Hello world.  How are you? ")
+Hello world.
+
+How are you?
+
+# Test erreur de type : int
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# Test erreur de type : None
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# Test appel sans argument
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
