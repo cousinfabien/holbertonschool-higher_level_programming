@@ -9,6 +9,8 @@ How are you?
 I am fine:
 <BLANKLINE>
 thank you.
+<BLANKLINE>
+<BLANKLINE>
 
 # Test texte vide
 >>> text_indentation("")
@@ -22,12 +24,16 @@ Are you okay?
 Yes:
 <BLANKLINE>
 good.
+<BLANKLINE>
+<BLANKLINE>
 
 # Test texte avec espaces en début et fin
 >>> text_indentation("  Hello world.  How are you? ")
 Hello world.
 <BLANKLINE>
 How are you?
+<BLANKLINE>
+<BLANKLINE>
 
 # Test avec valeur non string : int
 >>> try:
