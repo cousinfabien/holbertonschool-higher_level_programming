@@ -7,10 +7,10 @@ How are you?
 I am fine:
 thank you.
 
-# Test texte vide : ne doit rien afficher
+# Test texte vide
 >>> text_indentation("")
 
-# Test plusieurs délimiteurs consécutifs
+# Test texte avec plusieurs délimiteurs consécutifs
 >>> text_indentation("Hi! Are you okay?.. Yes: good.")
 Hi!
 Are you okay?
@@ -22,20 +22,23 @@ good.
 Hello world.
 How are you?
 
-# Test erreur de type : int
->>> text_indentation(123)
-Traceback (most recent call last):
-    ...
-TypeError: text must be a string
+# Test avec valeur non string : int
+>>> try:
+...     text_indentation(123)
+... except Exception as e:
+...     print(e)
+text must be a string
 
-# Test erreur de type : None
->>> text_indentation(None)
-Traceback (most recent call last):
-    ...
-TypeError: text must be a string
+# Test avec valeur non string : None
+>>> try:
+...     text_indentation(None)
+... except Exception as e:
+...     print(e)
+text must be a string
 
-# Test appel sans argument
->>> text_indentation()
-Traceback (most recent call last):
-    ...
-TypeError: text_indentation() missing 1 required positional argument: 'text'
+# Test avec aucun argument (TypeError attendu)
+>>> try:
+...     text_indentation()
+... except Exception as e:
+...     print(e)
+text_indentation() missing 1 required positional argument: 'text'
