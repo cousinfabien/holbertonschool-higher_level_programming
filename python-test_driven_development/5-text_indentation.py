@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 """
-Module that prints a text with 2 new lines after each '.', '?' and ':'.
+Module to print text with 2 new lines after '.', '?', and ':'.
 """
 
 
 def text_indentation(text):
     """
-    Prints a text with 2 new lines after each '.', '?' or ':'.
-    Strips spaces at beginning and end of each line.
+    Prints a text with 2 new lines after each '.', '?', and ':'.
 
     Args:
-        text (str): the text to print
+        text (str): text to be indented
 
     Raises:
         TypeError: if text is not a string
@@ -20,15 +19,15 @@ def text_indentation(text):
 
     delimiters = ".?:"
     start = 0
+    n = len(text)
 
     for i, char in enumerate(text):
         if char in delimiters:
             segment = text[start:i + 1].strip()
-            if segment:
-                print(segment, end="\n\n")
+            if segment:print(segment, end="\n\n")
             start = i + 1
 
-    # Handle the last segment after the last delimiter
-    last_segment = text[start:].strip()
-    if last_segment:
-        print(last_segment)
+    # Segment restant après le dernier délimiteur
+    remaining = text[start:].strip()
+    if remaining:
+        print(remaining, end="")
