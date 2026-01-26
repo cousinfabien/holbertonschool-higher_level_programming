@@ -5,7 +5,7 @@
 class Square:
     """Represent a square with a validated private size attribute."""
 
-    def __init(self, size=0):
+    def __init__(self, size=0):
         """Initialize a new Square instance with size validation.
 
         Args:
