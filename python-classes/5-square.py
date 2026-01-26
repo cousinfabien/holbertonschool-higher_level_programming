@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module defines a class Square with
-size validation, getter/setter and area calculation."""
+size validation, area calculation and square printing."""
 
 
 class Square:
