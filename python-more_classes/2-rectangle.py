@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Defines a Rectangle class with width, height,
-and validation"""
+area, perimeter and validation"""
 
 
 class Rectangle:
