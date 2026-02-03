@@ -1,0 +1,1 @@
+# Trimestre 2, Semaine 4, Projet 2 : Python - Classes abstraites et Interfaces
