@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module defines a base geometry class with an unimplemented area method."""
+"""This module defines a base geometry class
+with an unimplemented area method."""
 
 
 class BaseGeometry:
