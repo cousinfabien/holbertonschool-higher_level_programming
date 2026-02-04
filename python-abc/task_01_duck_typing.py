@@ -14,6 +14,7 @@ class Shape(ABC):
         """Return the area of the shape"""
         pass
 
+    @abstractmethod
     def perimeter(self):
         """Return the perimeter of the shape"""
         pass
