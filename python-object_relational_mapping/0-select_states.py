@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-This module lists all states from the database hbtn_0e_0_usa.
-It connects to a MySQL server running on localhost at port 3306.
+This script lists all states from the database hbtn_0e_0_usa.
 The script takes 3 arguments: mysql username, password, and database name.
+It connects to a MySQL server running on localhost at port 3306.
 """
 import MySQLdb
 import sys
@@ -10,36 +10,37 @@ import sys
 
 if __name__ == "__main__":
     """
-    Accesses the database and gets the states from the states table.
+    Connects to the database and retrieves all states.
+    The results are sorted by states.id in ascending order.
     """
-    # Get arguments from the command line
-    mysql_user = sys.argv[1]
-    mysql_password = sys.argv[2]
+    # Database connection parameters from command line arguments
+    db_user = sys.argv[1]
+    db_pass = sys.argv[2]
     db_name = sys.argv[3]
 
-    # Connect to the MySQL server
+    # Establishing the connection to the MySQL server
+    # Using host='localhost' and port=3306 as required
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=mysql_user,
-        passwd=mysql_password,
+        user=db_user,
+        passwd=db_pass,
         db=db_name
     )
 
-    # Create a cursor object to execute queries
+    # Creating a cursor object to interact with the server
     cursor = db.cursor()
 
-    # Execute the SQL query to fetch all states sorted by id
+    # Executing the query to fetch all states ordered by ID
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
-    # Fetch all the rows from the last executed statement
-    rows = cursor.fetchall()
+    # Fetching all results from the executed query
+    query_rows = cursor.fetchall()
 
-    # Display the results as tuples
-    for row in rows:
+    # Printing each row in the format (id, name)
+    for row in query_rows:
         print(row)
 
-    # Close the cursor and the database connection
+    # Closing the cursor and the connection to free resources
     cursor.close()
     db.close()
-    
