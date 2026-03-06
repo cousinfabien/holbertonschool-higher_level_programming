@@ -35,7 +35,7 @@ if __name__ == "__main__":
     # The second argument of execute() must be a tuple containing the data.
     # MySQLdb handles the escaping and quoting automatically.
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    
+
     # Note: (state_name,) is a tuple with a single element
     cursor.execute(query, (state_name,))
 
