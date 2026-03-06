@@ -34,7 +34,7 @@ if __name__ == "__main__":
     # We use a backslash to keep the line under 80 characters for pycodestyle
     query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' \
 ORDER BY states.id ASC"
-    
+
     # Executing the SQL query
     cursor.execute(query)
 
