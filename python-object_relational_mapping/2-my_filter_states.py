@@ -2,8 +2,7 @@
 """
 This script takes in an argument and displays all values in the states
 table of hbtn_0e_0_usa where name matches the argument.
-It takes 4 arguments: mysql username, password, database name,
-and state name searched.
+It uses MySQLdb and the format() method for the query.
 """
 import MySQLdb
 import sys
@@ -14,28 +13,23 @@ if __name__ == "__main__":
     Connects to the database and filters states based on the 4th argument.
     The results are sorted by states.id in ascending order.
     """
-    # Database connection parameters from command line arguments
-    db_user = sys.argv[1]
-    db_pass = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
-
-    # Establishing the connection to the MySQL server
+    # Database connection parameters
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=db_user,
-        passwd=db_pass,
-        db=db_name
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
 
-    # Creating a cursor object
+    # Creating the cursor
     cursor = db.cursor()
 
-    # Using format to create the SQL query as requested
-    # Note: This is generally unsafe, but required for this specific task
-    query = "SELECT * FROM states WHERE name = '{}' \
-ORDER BY states.id ASC".format(state_name)
+    # The issue often comes from how the string is formatted.
+    # We must ensure the argument is treated as a string in SQL.
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
+        sys.argv[4]
+    )
 
     # Executing the formatted query
     cursor.execute(query)
@@ -43,7 +37,7 @@ ORDER BY states.id ASC".format(state_name)
     # Fetching all results
     query_rows = cursor.fetchall()
 
-    # Printing results in the required format
+    # Display results
     for row in query_rows:
         print(row)
 
